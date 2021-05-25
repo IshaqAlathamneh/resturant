@@ -1,26 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>restaurant</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<script src = "/socket.io/socket.io.js"></script>
-   
+<script src="/socket.io/socket.io.js"></script>
+
 <script>
-   var socket = io();
-//    socket.on('connectToRoom',function(data) {
-      
-//       document.write(data);
-//    });
+    var socket = io();
+    //    socket.on('connectToRoom',function(data) {
+
+    //       document.write(data);
+    //    });
 </script>
+
 <body>
     <header>
-
+        <span class="header">
+            <img src="./images/logo.jpg">
+            <h3><a href="">Home</a></h3>
+            <h3><a href="">Economic</a></h3>
+        </span>
     </header>
     <main>
-        <div class="one">
+        <section>
+            <div id="table-wrapper1">
+                <div class="chair1 chair-lg"></div>
+                <div class="chair1 left"><button class="input5" id="myBtn">Open Modal</button></div>
+                <div class="chair1 left"></div>
+                <div class="chair1 right"></div>
+                <div class="chair1 right"></div>
+                <div class="chair1 chair-lg"></div>
+                <div class="the-table1">
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="table-wrapper2">
+                <div class="chair2 chair-lg"></div>
+                <div class="chair2 left"></div>
+                <div class="chair2 left"></div>
+                <div class="chair2 right"></div>
+                <div class="chair2 right"></div>
+                <div class="chair2 chair-lg"></div>
+                <div class="the-table2">
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="table-wrapper3">
+                <div class="chair1 chair-lg"></div>
+                <div class="chair1 left"></div>
+                <div class="chair1 left"></div>
+                <div class="chair1 right"></div>
+                <div class="chair1 right"></div>
+                <div class="chair1 chair-lg"></div>
+                <div class="the-table1">
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                    <div class="plate1">
+                        <div class="knife1"></div>
+                        <div class="fork1"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="table-wrapper4">
+                <div class="chair2 chair-lg"></div>
+                <div class="chair2 left"></div>
+                <div class="chair2 left"></div>
+                <div class="chair2 right"></div>
+                <div class="chair2 right"></div>
+                <div class="chair2 chair-lg"></div>
+                <div class="the-table2">
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                    <div class="plate2">
+                        <div class="knife2"></div>
+                        <div class="fork2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- The Modal for popup -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="">
+                    <label class="label1" for="" value="what you like to eat">type food :</label>
+                    <input class="input2" type="text">
+                    <br>
+                    <br>
+                    <label class="label2" for="">Quantity</label>
+                    <input class="input3" type="number">
+                    <br>
+                    <br>
+                    <input class="input4" type="button" value="paid">
+                </form>
+            </div>
+        </div>
+        <!-- <div class="one">
             <h2>1</h2>
             <img src="images/table.png" alt="">
         </div>
@@ -35,11 +198,12 @@
         <div class="four">
             <h2>4</h2>
             <img src="images/table.png" alt="">
-        </div>
+        </div> -->
     </main>
     <footer>
-
+        <p>&copy; All rights reserved by ASAC</p>
     </footer>
-    
+    <script src="./script.js"></script>
 </body>
+
 </html>
