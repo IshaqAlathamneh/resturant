@@ -49,8 +49,11 @@ function handelForm(event) {
 
 // })
 
-socket.on('theLast', (payLoad) => {
-  console.log('the last', payLoad);
+// socket.on('theLast', (payLoad) => {
+//   console.log('the last', payLoad);
+// })
+socket.on('last', payload => {
+  swal("Hi Client", `Your Order (${payload.Meal}) is prepared`);
 })
 
 // `You order ${payload.Quantity} ${payload.Meal} and u have to pay ${payload.thePrice}`
