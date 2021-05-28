@@ -1,4 +1,7 @@
 'use strict';
+
+// const { io } = require("socket.io-client");
+
 const socket = io()
   // Get the modal
 console.log(socket);
@@ -28,3 +31,26 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+var myForm = document.getElementById('myForm')
+
+myForm.addEventListener('submit', handelForm);
+
+function handelForm(event) {
+  event.preventDefault()
+  socket.emit('send Obj', {
+    Meal: event.target.foodName.value,
+    Quantity: event.target.Quantity.value
+  })
+}
+// socket.on('first delivered', payload => {
+//   console.log(payload);
+//   // let response = document.getElementsById('foodResponse')
+
+// })
+
+socket.on('theLast', (payLoad) => {
+  console.log('the last', payLoad);
+})
+
+// `You order ${payload.Quantity} ${payload.Meal} and u have to pay ${payload.thePrice}`
