@@ -2,27 +2,37 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+const path = require('path')
+const http = require('http').createServer(app);
+app.use(express.static(path.join(__dirname, 'public')))
+const io = require('socket.io')(http);
+// const { Server } = require("socket.io");
+// const io = new Server(server);
+
+
 const port = process.env.PORT;
-app.set('view engine', 'ejs');
-app.use(express.static('./public/'));
-app.use(express.urlencoded({ extended: true }))
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+
+
+// app.set('view engine', 'ejs');
+// app.use(express.static('./public/'));
+// app.use(express.urlencoded({ extended: true }))
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/index.html');
+// });
+
 
 io.on('connection', (socket) => {
   console.log('a user connected with ID --->', socket.id)
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
+  socket.on('send', socket => {
+    console.log(socket);
+  });
 
 });
 
-server.listen(port, () => {
+http.listen(port, () => {
   console.log(`listening on *: ${port}`);
 });
 
