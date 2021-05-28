@@ -9,26 +9,25 @@ const io = require('socket.io')(http);
 // const { Server } = require("socket.io");
 // const io = new Server(server);
 
-
 const port = process.env.PORT;
-
-
-// app.set('view engine', 'ejs');
-// app.use(express.static('./public/'));
-// app.use(express.urlencoded({ extended: true }))
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html');
-// });
-
 
 io.on('connection', (socket) => {
   console.log('a user connected with ID --->', socket.id)
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-  socket.on('send', socket => {
-    console.log(socket);
+  socket.on('send', payload => {
+    console.log(payload);
   });
+
+  socket.on('send Obj', payload => {
+    console.log(payload);
+    socket.emit('first delivered', payload)
+
+  })
+  socket.on('order with price', payload => {
+    socket.emit('theLast', payload)
+  })
 
 });
 
@@ -63,6 +62,4 @@ const resManage = io.of('/waiter'); // namespace
 // when someone connects to http://localhost:3000/health-system
 resManage.on('connection', (socket) => {
   console.log('A CLIENT GOT CONNECTED TO resManage : socket.id', socket.id);
-
-
 })
