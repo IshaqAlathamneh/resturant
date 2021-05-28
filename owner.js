@@ -15,7 +15,11 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected with ID --->', socket.id);
+  console.log('a user connected with ID --->', socket.id)
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+
 });
 
 server.listen(port, () => {
@@ -42,13 +46,13 @@ const resManage = io.of('/waiter'); // namespace
 //         // broadcast
 //         io.emit('brightness', payload);
 //     });
-    
+
 // });
 
 
 // when someone connects to http://localhost:3000/health-system
-resManage.on('connection', (socket)=> {
-    console.log('A CLIENT GOT CONNECTED TO resManage : socket.id', socket.id);
-    
+resManage.on('connection', (socket) => {
+  console.log('A CLIENT GOT CONNECTED TO resManage : socket.id', socket.id);
+
 
 })
