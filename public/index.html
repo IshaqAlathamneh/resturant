@@ -9,15 +9,6 @@
     <title>restaurant</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<script src="/socket.io/socket.io.js"></script>
-
-<script>
-    var socket = io();
-    //    socket.on('connectToRoom',function(data) {
-
-    //       document.write(data);
-    //    });
-</script>
 
 <body>
     <header>
@@ -171,15 +162,24 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <form action="">
+
                     <label class="label1" for="" value="what you like to eat">type food :</label>
-                    <input class="input2" type="text">
-                    <br>
-                    <br>
+                    <select name="food" class="input2">
+                        <option value="Shawrma regular sandwich">Shawrma sandwich</option>
+                        <option value="Shawrma super sandwich">Shawrma super sandwich</option>
+                        <option value="fahita">fahita</option>
+                        <option value="zenger">zenger</option>
+                    </select>
                     <label class="label2" for="">Quantity</label>
                     <input class="input3" type="number">
-                    <br>
-                    <br>
                     <input class="input4" type="button" value="paid">
+                    <!-- <input class="input2" type="text">
+                    <br>
+                    <br>
+                    
+                    <br>
+                    <br>
+                     -->
                 </form>
             </div>
         </div>
@@ -203,6 +203,8 @@
     <footer>
         <p>&copy; All rights reserved by ASAC</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="./script.js"></script>
 </body>
 
