@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 const io = require('socket.io')(http, {
   cors: {
-    origin: "http://127.0.0.1:5500",
+    origin: "https://elephant-project.herokuapp.com/",
     methods: ["GET", "POST"]
   }
 });
