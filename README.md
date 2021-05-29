@@ -27,3 +27,7 @@
 #### `socket.io` requirements
 
 #### `socket.io-client`
+
+## UML Diagram
+
+<img src ="UML.png" >
