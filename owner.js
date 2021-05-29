@@ -9,8 +9,8 @@ const io = require('socket.io')(http);
 // const { Server } = require("socket.io");
 // const io = new Server(server);
 
-const port = process.env.PORT;
-
+const port = process.env.PORT ||3000;
+const resManage = io.of('/waiter');
 io.on('connection', (socket) => {
   console.log('a user connected with ID --->', socket.id)
   socket.on('disconnect', () => {
@@ -41,6 +41,7 @@ io.on('connection', (socket) => {
     setTimeout(()=>{
       console.log('inside timeout');
       socket.emit('profit', sum)
+      resManage.emit('profit', sum)
     },5000)
     
   })
@@ -73,7 +74,7 @@ http.listen(port, () => {
 
 // const io = require('socket.io')(port);
 
-const resManage = io.of('/waiter'); // namespace
+ // namespace
 // connection : is an event that will be fired
 // when a client connects to the brain server
 
@@ -95,5 +96,6 @@ const resManage = io.of('/waiter'); // namespace
 
 // when someone connects to http://localhost:3000/health-system
 resManage.on('connection', (socket) => {
+  resManage.emit('profit', sum)
   console.log('A CLIENT GOT CONNECTED TO resManage : socket.id', socket.id);
 })
