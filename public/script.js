@@ -1,6 +1,6 @@
 'use strict';
 // const { io } = require("socket.io-client");
-const socket = io()
+const socket = io('https://elephant-project.herokuapp.com/')
 let useName = '';
 // Get the modal
 // console.log(socket);

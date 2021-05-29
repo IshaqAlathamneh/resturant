@@ -1,11 +1,11 @@
 'use strict';
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors')
+// const cors = require('cors')
 const app = express();
 const path = require('path')
 const http = require('http').createServer(app);
-app.use(cors)
+// app.use(cors)
 app.use(express.static(path.join(__dirname, 'public')))
 
 const io = require('socket.io')(http);
