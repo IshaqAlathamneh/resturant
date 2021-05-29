@@ -8,12 +8,7 @@ const http = require('http').createServer(app);
 app.use(cors)
 app.use(express.static(path.join(__dirname, 'public')))
 
-const io = require('socket.io')(http, {
-  cors: {
-    origin: "https://elephant-project.herokuapp.com/",
-    methods: ["GET", "POST"]
-  }
-});
+const io = require('socket.io')(http);
 
 // const { Server } = require("socket.io");
 // const io = new Server(server);
