@@ -21,12 +21,12 @@
     <main>
         <section>
             <div id="table-wrapper1">
-                <div class="chair1 chair-lg"></div>
+                <div class="chair1 chair-lg"><button class="input5" id="myBtn">Open Modal</button></div>
                 <div class="chair1 left"><button class="input5" id="myBtn">Open Modal</button></div>
-                <div class="chair1 left"></div>
-                <div class="chair1 right"></div>
-                <div class="chair1 right"></div>
-                <div class="chair1 chair-lg"></div>
+                <div class="chair1 left"><button class="input5" id="myBtn">Open Modal</button></div>
+                <div class="chair1 right"><button class="input5" id="myBtn">Open Modal</button></div>
+                <div class="chair1 right"><button class="input5" id="myBtn">Open Modal</button></div>
+                <div class="chair1 chair-lg"><button class="input5" id="myBtn">Open Modal</button></div>
                 <div class="the-table1">
                     <div class="plate1">
                         <div class="knife1"></div>
@@ -53,7 +53,8 @@
                         <div class="fork1"></div>
                     </div>
                 </div>
-            </div>
+
+                <!-- </div>
             <div id="table-wrapper2">
                 <div class="chair2 chair-lg"></div>
                 <div class="chair2 left"></div>
@@ -155,8 +156,16 @@
                         <div class="fork2"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
+        <div id="massage">
+            <section id="message-container"></section>
+
+            <form id="send-container">
+                <input type="text" id="message-input">
+                <button type="submit" id="send-button">Send</button>
+            </form>
+        </div>
         <!-- The Modal for popup -->
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -170,8 +179,16 @@
                         <option value="fahita" >fahita</option>
                         <option value="zenger" >zenger</option>
                     </select>
+                    <br>
+                    <br>
                     <label class="label2" for="">Quantity</label>
-                    <input class="input3" id="Quantity" type="number">
+                    <input class="input3" id="Quantity" type="number" required>
+                    <br>
+                    <br>
+                    <label class="label2" for="">Card Number</label>
+                    <input class="input3" id="hakedCard" type="number" required>
+                    <br>
+                    <br>
                     <input class="input4" type="submit">
                     <!-- <input class="input2" type="text">
                     <br>
@@ -183,31 +200,8 @@
                 </form>
             </div>
         </div>
-        <div id="foodResponse" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form id="myForm">
 
-                    <label class="label1" for="" value="what you like to eat">type food :</label>
-                    <select class="input2" id="foodName">
-                        <option value="shawrma regular sandwich"  >Shawrma sandwich</option>
-                        <option value="shawrma super sandwich">Shawrma super sandwich</option>
-                        <option value="fahita" >Fahita</option>
-                        <option value="zenger" >Zenger</option>
-                    </select>
-                    <label class="label2" for="">Quantity</label>
-                    <input class="input3" id="Quantity" type="number">
-                    <input class="input4" type="submit">
-                    <!-- <input class="input2" type="text">
-                    <br>
-                    <br>
-                    
-                    <br>
-                    <br>
-                     -->
-                </form>
-            </div>
-        </div>
+
         <!-- <div class="one">
             <h2>1</h2>
             <img src="images/table.png" alt="">
@@ -229,10 +223,11 @@
         <p>&copy; All rights reserved by ASAC</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="https://elephant-project.herokuapp.com/socket.io/socket.io.js"></script> -->
+    <script src="https://cdn.socket.io/4.1.1/socket.io.min.js" integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script src="./script.js"></script>
+
 </body>
 
 </html>
